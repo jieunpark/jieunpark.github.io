@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlueTiger App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    .button {
+      display: inline-block;
+      background-color: #4285F4;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+  <!-- 앱이 없을 경우 스토어로 리다이렉트하는 스크립트 -->
+  <script>
+    // 페이지 로드 후 일정 시간(2초) 후에 스토어로 리다이렉트
+    setTimeout(function() {
+      // 현재 URL이 앱에서 열리지 않았다면 스토어로 이동
+      var now = new Date().getTime();
+      if (document.hidden || document.webkitHidden) {
+        // 앱이 포그라운드로 전환됨 - 아무것도 하지 않음
+        return;
+      }
+      
+      // OS 감지
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (/android/i.test(userAgent)) {
+        // Android - Play 스토어로 이동
+        window.location.href = "https://play.google.com/store/apps/details?id=com.nhn.android.search&hl=ko";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // iOS - App Store로 이동
+        window.location.href = "https://apps.apple.com/kr/app/%EB%84%A4%EC%9D%B4%EB%B2%84-naver/id393499958"; // YOUR_APP_ID를 실제 ID로 변경
+      }
+    }, 2000);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>BlueTiger App</h1>
+    <p>이 페이지는 BlueTiger 앱에서 열릴 예정입니다.</p>
+    <p>앱이 설치되어 있지 않다면 잠시 후 스토어로 이동합니다.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "kr.co.bluetiger",
+      "package_name": "kr.co.bluetigerapp.dev",
+      "sha256_cert_fingerprints": ["32:34:32:35:5B:45:B8:C3:8E:D0:27:01:87:48:E4:91:E2:E7:51:E1:A5:FB:73:9A:48:1E:4D:24:D5:9D:2A:11"]
+    }
+  }]
